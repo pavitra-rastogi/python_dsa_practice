@@ -24,13 +24,13 @@ class Solution:
 	# @param A : string
 	# @return an integer
 	def lengthOfLongestSubstring(self, A):
-        last_seen = {}
-        left = 0
-        max_len = 0
-        for right in range(len(A)):
-            ch = A[right]
-            if ch in last_seen and last_seen[ch] >= left :
-                left = last_seen[ch] + 1
-            last_seen[ch] = right
-            max_len = max(max_len, right - left + 1)
-        return max_len
+		last_seen= dict()
+		left = 0
+		max_len = 0
+		for right in range(len(A)):
+			ch = A[right]
+			if ch in last_seen and last_seen[ch] >= left :
+				left = last_seen[ch] + 1
+			last_seen[ch] = right
+			max_len = max(max_len, right - left + 1)
+		return max_len
